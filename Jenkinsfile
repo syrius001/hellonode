@@ -10,8 +10,8 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-		agent { dockerfile true }
-        app = docker.build("190319039393-hellonode:1")
+
+        app = docker.build("190319039393/spring-petclinic")
     }
 
     stage('Test image') {
