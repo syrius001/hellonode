@@ -6,7 +6,10 @@ node {
 
         checkout scm
     }
-
+	
+	agent {
+        docker { image 'node:7-onbuild' }
+    }
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
