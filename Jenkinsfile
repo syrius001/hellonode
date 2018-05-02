@@ -6,14 +6,11 @@ node {
 
         checkout scm
     }
-	
-	agent {
-        docker { image 'node:7-onbuild' }
-    }
+
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
+		agent { dockerfile true }
         app = docker.build("190319039393-hellonode:1")
     }
 
